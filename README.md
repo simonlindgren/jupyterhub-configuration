@@ -33,6 +33,7 @@ apt install python3-pip
 conda install jupyterhub
 ```
 All users of the hub must have access to `jupyterhub`, so also do: `pip3 install jupyterhub`
+
 Check that it is now also installed in `/usr/local/bin`, using: `which -a jupyterhub`
 
 Continue installing the hub:
