@@ -16,7 +16,7 @@ Set up a Python 3 environment with the help of Anaconda.
 
 Download: `wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64.sh`
 
-Install: `bash Anaconda3-2019.10-Linux-x86_64.sh`
+Install: `bash Anaconda3-2020.02-Linux-x86_64.sh`
 
 Choose to install under `opt`: `[/root/anaconda3] >>> /opt/anaconda3`
 Say `yes` to conda initialisation.
