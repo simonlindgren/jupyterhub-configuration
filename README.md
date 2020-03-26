@@ -30,7 +30,7 @@ During the interactive install process, choose a convenient install path:
 
 ```
 [/root/anaconda3] >>> /opt/anaconda3
-´´´
+```
 
 When asked, say `yes` to `conda init`.
 
