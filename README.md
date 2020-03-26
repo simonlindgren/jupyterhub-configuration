@@ -48,7 +48,7 @@ Your domain name (<your.address>, e.g. http://myhubserver.com) must be set up wi
 We must set up SSL on the server to be able to use https:
 
 ```
-apt-get install letsencrypt
+apt install letsencrypt
 certbot certonly
 ```
 Choose: `1: Spin up a temporary webserver (standalone)`, then go through the generation process.
