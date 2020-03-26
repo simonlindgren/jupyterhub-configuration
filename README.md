@@ -56,6 +56,7 @@ conda install jupyterhub
 All users of the hub must have access to `jupyterhub`, so also do:
 
 ```
+# IS THIS REALLY NEEDED???
 pip3 install jupyterhub
 ```
 
