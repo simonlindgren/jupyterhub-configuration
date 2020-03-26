@@ -228,6 +228,7 @@ To make Julia appear as a selectable kernel for Jupyter Notebooks on the hub ins
 julia
 import Pkg
 Pkg.add("IJulia”)
+<press ctrl + D>
 ```
 
 Wait for it to install. Refresh the browser. Try to create a new notebook, and Julia will be available as a kernel.
