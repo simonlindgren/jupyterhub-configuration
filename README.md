@@ -20,7 +20,7 @@ First, become root:
 $ sudo -i
 ```
 
-Download Anaconda (current version):
+Download Anaconda (current version, e.g.):
 
 ```
 wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
