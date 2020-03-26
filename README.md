@@ -83,8 +83,9 @@ c.Spawner.notebook_dir = '~/notebooks'
 ```
 
 Make the first user:
-`useradd -m digsum`
-`passwd digsum`
+`useradd -m <name-of-your-first-admin-user>`
+
+`passwd <name-of-your-first-admin-user>`
 
 Now make a `notebooks` directory under your first admin user's home dir, so that this user has a directory where the hub can spawn. Also give the admin user rights to that directory:
 
