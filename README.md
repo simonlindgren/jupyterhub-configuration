@@ -187,7 +187,7 @@ conda update --all
 Install R:
 
 ```
-sudo -i 
+$ ssh root@xxx.xx.xxx.xx 
 apt-get install r-base r-base-dev libssl-dev libcurl3-dev curl
 install.packages('IRkernel') 
 IRkernel::installspec(user = FALSE)
@@ -198,7 +198,7 @@ This will install R in `/usr/bin/R` which makes it accessible by typing `R` in T
 Installing R packages:
 
 ```
-sudo -i
+$ ssh root@xxx.xx.xxx.xx 
 R
 install.packages(“<package-name>")
 ```
