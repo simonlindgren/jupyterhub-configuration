@@ -94,6 +94,14 @@ mkdir /home/<name-of-your-first-admin-user>/notebooks
 chown -R <name-of-your-first-admin-user> /home/<name-of-your-first-admin-user>/notebooks
 ```
 
+The install will default to the `sh` shell (e.g. in users' Terminals in JupyterHub). 
+We want the `bash` shell to be default:
+
+```
+rm /bin/sh
+ln -s /bin/bash /bin/sh
+```
+
 ### 5. Starting and re-starting the hub
 Use `screen` to set up the server as a session that will continue running when closing terminal.
 
