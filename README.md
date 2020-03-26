@@ -17,13 +17,13 @@ Set up a Python 3 environment with the help of Anaconda.
 Download Anaconda (current version, e.g.):
 
 ```
-wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-ppc64le.sh
+wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64.sh
 ```
 
 Install anaconda: 
 
 ```
-bash Anaconda3-2020.02-Linux-ppc64le.sh
+bash Anaconda3-2020.02-Linux-x86_64.sh
 ```
 
 During the interactive install process, choose a convenient install path:
@@ -37,7 +37,7 @@ When asked, say `yes` to `conda init`.
 Remove the installer:
 
 ```
-rm Anaconda3-2020.02-Linux-ppc64le.sh
+rm Anaconda3-2020.02-Linux-x86_64.sh
 ```
 
 Activate anaconda:
