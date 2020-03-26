@@ -1,4 +1,4 @@
-# JupyterHub on a Linode server
+# JupyterHub on Linode
 
 ### 1. Prepare the machine
 Create an account at [linode.com](http://linode.com) and create a linode with the specs you want (and [can afford](https://www.linode.com/pricing/)). For this tutorial I used Ubuntu 18.04 LTS.
@@ -26,11 +26,7 @@ Install anaconda:
 bash Anaconda3-2019.10-Linux-x86_64.sh
 ```
 
-During the interactive install process, choose a convenient install path:
-
-```
-[/root/anaconda3] >>> /opt/anaconda3
-```
+Use the suggested install path: `/root/anaconda3`
 
 When asked, say `yes` to `conda init`.
 
