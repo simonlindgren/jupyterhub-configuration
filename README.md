@@ -9,7 +9,7 @@ Connect to the linode:
 
 ```
 $ ssh root@xxx.xx.xxx.xx 
-
+```
 
 ### 2. Set up Python
 Set up a Python 3 environment with the help of Anaconda.
