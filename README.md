@@ -69,7 +69,7 @@ which -a jupyterhub
 Continue installing the hub:
 
 ```
-conda install notebook
+conda install notebook # I DID NOT DO THIS!!
 conda install nodejs -c conda-forge
 jupyter labextension install @jupyterlab/hub-extension
 ```
