@@ -192,6 +192,7 @@ apt install r-base r-base-dev libssl-dev libcurl3-dev curl
 R
 install.packages('IRkernel') 
 IRkernel::installspec(user = FALSE)
+q()
 ```
 This will install R in `/usr/bin/R` which makes it accessible by typing `R` in Terminal for all users. It also installs R as a selectable kernel in Jupyter.
 
@@ -202,6 +203,7 @@ Installing R packages:
 $ ssh root@xxx.xx.xxx.xx 
 R
 install.packages(“<package-name>")
+q()
 ```
 ----
 
