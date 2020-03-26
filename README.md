@@ -14,12 +14,6 @@ $ ssh root@xxx.xx.xxx.xx
 ### 2. Set up Python
 Set up a Python 3 environment with the help of Anaconda.
 
-First, become root:
-
-```
-$ sudo -i
-```
-
 Download Anaconda (current version, e.g.):
 
 ```
