@@ -11,18 +11,26 @@ Connect to the linode:
 $ ssh root@xxx.xx.xxx.xx 
 ```
 
-### 2. Set up Python
-Set up a Python 3 environment with the help of Anaconda.
+### 2. Set up a Conda/Python3 environment
 
-Download Anaconda (current version, e.g.):
-
+Download latest conda:
 ```
-wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
+Install it:
+```
+bash Miniconda3-latest-Linux-x86_64.sh
+```
+Install it to the `opt` directory:
+```
+[/root/miniconda3] >>> /opt/conda
 ```
 
-Install anaconda: 
 
-```
+
+
+
+
 bash Anaconda3-2020.02-Linux-x86_64.sh
 ```
 
