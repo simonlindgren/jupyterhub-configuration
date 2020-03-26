@@ -188,7 +188,7 @@ Install R:
 
 ```
 $ ssh root@xxx.xx.xxx.xx 
-apt-get install r-base r-base-dev libssl-dev libcurl3-dev curl
+apt install r-base r-base-dev libssl-dev libcurl3-dev curl
 install.packages('IRkernel') 
 IRkernel::installspec(user = FALSE)
 ```
