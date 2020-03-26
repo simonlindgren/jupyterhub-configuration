@@ -11,81 +11,33 @@ Connect to the linode:
 $ ssh root@xxx.xx.xxx.xx 
 ```
 
-### 2. Set up a Conda/Python3 environment
+### 2. Set up Python
+Set up a Python 3 environment with the help of Anaconda.
 
-Download latest conda:
-```
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-```
-Install it:
-```
-bash Miniconda3-latest-Linux-x86_64.sh
-```
-Install it to the `opt` directory:
-```
-[/root/miniconda3] >>> /opt/conda
-```
-
-
-
-
-
-
-bash Anaconda3-2020.02-Linux-x86_64.sh
-```
-
-During the interactive install process, choose a convenient install path:
-
-```
-[/root/anaconda3] >>> /opt/anaconda3
-```
-
+Download: `wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64.sh`
+Install: `bash Anaconda3-2019.10-Linux-x86_64.sh`
+Choose to install under `opt`: `[/root/anaconda3] >>> /opt/anaconda3`
+Say `yes` to conda initialisation.
 When asked, say `yes` to `conda init`.
-
-Remove the installer:
-
-```
-rm Anaconda3-2020.02-Linux-x86_64.sh
-```
-
-Activate anaconda:
-
-```
-source /opt/anaconda3/bin/activate
-```
+Remove the installer: `rm Anaconda3-2020.02-Linux-x86_64.sh`
+Activate anaconda: `source /opt/anaconda3/bin/activate`
 
 ### 3. Install JupyterHub
-
 ```
-apt-get update
+apt update
 apt install python3-pip
 conda install jupyterhub
 ```
-All users of the hub must have access to `jupyterhub`, so also do:
-
-```
-# IS THIS REALLY NEEDED???
-pip3 install jupyterhub
-```
-
-Check that it is now also installed in `/usr/local/bin`, using:
-
-```
-which -a jupyterhub
-```
+All users of the hub must have access to `jupyterhub`, so also do: `pip3 install jupyterhub`
+Check that it is now also installed in `/usr/local/bin`, using: `which -a jupyterhub`
 
 Continue installing the hub:
-
 ```
 conda install notebook
-
-conda install -c conda-forge nodejs
-
-jupyter labextension install @jupyterlab/hub-extension
+conda install nodejs -c conda-forge
 ```
 
 ### 4. Configure JupyterHub
-
 Your domain name (<your.address>, e.g. http://myhubserver.com) must be set up with your hosting provider to point to the static ip address of the server.
 
 We must set up SSL on the server to be able to use https:
@@ -103,18 +55,14 @@ Now generate a config file for Jupyterhub. I cd’d back up to root (`cd /`), an
 ```
 jupyterhub --generate-config 
 ```
-
 Edit the config file:
-
 ```
 nano jupyterhub_config.py
 ```
 Add these things to it: 
 
 ```
-# Configuration file for jupyterhub
-# Set up logging
-c.JupyterHub.extra_log_file = '/tmp/jupyterhub.log'
+# CONFIGURATION FILE FOR JUPYTERHUB
 # Set up users
 c.Authenticator.admin_users = {'<name-of-your-first-admin-user>'}
 # Set up web stuff
@@ -129,24 +77,26 @@ c.Spawner.cmd = ['jupyter-labhub']
 c.Spawner.notebook_dir = '~/notebooks'
 ```
 
+Make the first user:
+`useradd -m digsum`
+`passwd digsum`
+
 Now make a `notebooks` directory under your first admin user's home dir, so that this user has a directory where the hub can spawn. Also give the admin user rights to that directory:
 
 ```
 mkdir /home/<name-of-your-first-admin-user>/notebooks
-sudo chown -R <name-of-your-first-admin-user> /home/<name-of-your-first-admin-user>/notebooks
+chown -R <name-of-your-first-admin-user> /home/<name-of-your-first-admin-user>/notebooks
 ```
 
 ### 5. Starting and re-starting the hub
-
 Use `screen` to set up the server as a session that will continue running when closing terminal.
-
-Remember to be root (`sudo -i`) when doing this.
 
 ```
 screen -S jupyterhub 
-cd / 
-jupyterhub --config jupyterhub_config.py
+jupyterhub
 ```
+Note that `jupyterhub` must be run in the same directory where `jupyterhub_config.py` is.
+
 Exit the `screen` session by ctrl+A+D.
 
 Access JupyterHub in your browser at https://<your.address>/ . 
@@ -158,7 +108,7 @@ screen -r jupyterhub
 <press ctrl+C>
 ```
 
-To relaunch the hub, make sure that all instances of jupyterhub and configurable-http-proxy are terminated:
+If stopping the hub, make sure before relaunching it that all instances of jupyterhub and configurable-http-proxy are terminated:
 
 ```
 ps aux | grep jupyter 
@@ -168,60 +118,33 @@ ps aux | grep configurable
 kill <process id, one or several>
 ```
 
-Launch the hub as root:
-
-```
-sudo -i 
-cd /
-jupyterhub --config  jupyterhub_config.py
-```
-
-
-Exit sudo mode with `exit`.
-
-
 ### Some notes
 
 ----
 
 #### Adding users
 
-To set up new users, first create them as users of the Linux server, and set their password. 
+To set up new users, first create them as users of the Linux server (no need to set a password here). 
 
 ```
-useradd <user>
-passwd <user>
-```
-Remember to also whitelist the user through File -> Hub Control Panel -> Admin in the jupyterhub GUI.
-
-##### Notebooks directories
-
-All users must have a `notebooks` directory, under `/home/<user>/`. 
-
-I have a large second drive mounted as `/mnt/blob/`. I have created `<user>/notebooks` dirs on it for all users, and symlink them like this: 
-
-```
-mkdir /mnt/blob/<user>/notebooks
-sudo chown -R <user> /mnt/blob/<user>/notebooks
-ln -s /mnt/blob/<user>/notebooks /home/<user>/
+useradd -m <user>
+mkdir /home/<user>/notebooks
+chown -R <user> /home/<user>/notebooks
 ```
 
 ----
 
 #### Installing packages
 
-Install as root so that all users get access. As we have conda python, the first option is:
-
 ```
-sudo -i
+$ ssh root@xxx.xx.xxx.xx 
 conda install <package name>
 ```
 
-Otherwise:
+or:
 
 ```
-sudo -i
-pip install <package name>
+pip <or pip3> install <package name>
 ```
 
 ----
@@ -243,7 +166,8 @@ Then relaunch jupyterhub.
 Update jupyter notebook, lab, hub and other packages through:
 
 ```
-sudo -i
+$ ssh root@xxx.xx.xxx.xx 
+
 conda update --all 
 # or conda update —packagename
 # conda update jupyter
@@ -322,8 +246,3 @@ In the box "User Preferences", add (as an example):
 ```
 
 Click save button. This sets shift + accelerator key (i.e. command) + T to as a shortcut to launch Terminal.
-
-
-
-
-
