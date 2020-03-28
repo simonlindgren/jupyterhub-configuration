@@ -26,10 +26,13 @@ Remove the installer: `rm Anaconda3-2020.02-Linux-x86_64.sh`
 
 Activate anaconda: `source /opt/anaconda3/bin/activate`
 
-### 3. Install JupyterHub
 ```
 apt update
 apt install python3-pip
+```
+
+### 3. Install JupyterHub
+```
 conda install nodejs -c conda-forge
 conda install jupyterhub
 conda install jupyterlab
