@@ -110,7 +110,7 @@ Use `screen` to set up the server as a session that will continue running when c
 
 ```
 screen -S jupyterhub 
-jupyterhub
+jupyterhub --config /etc/jupyterhub_config.py
 ```
 Note that `jupyterhub` must be run in the same directory where `jupyterhub_config.py` is.
 
