@@ -19,7 +19,9 @@ Download: `wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64
 Install: `bash Anaconda3-2020.02-Linux-x86_64.sh`
 
 Choose to install under `opt`: `[/root/anaconda3] >>> /opt/anaconda3`
+
 Say `yes` to conda initialisation.
+
 When asked, say `yes` to `conda init`.
 
 Remove the installer: `rm Anaconda3-2020.02-Linux-x86_64.sh`
@@ -36,9 +38,8 @@ All users of the hub must have access to `jupyterhub`, so also do: `pip3 install
 
 Check that it is now also installed in `/usr/local/bin`, using: `which -a jupyterhub`
 
-Continue installing the hub:
+Install `nodejs:
 ```
-conda install notebook
 conda install nodejs -c conda-forge
 ```
 
