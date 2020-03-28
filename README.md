@@ -108,11 +108,13 @@ ln -s /bin/bash /bin/sh
 ### 5. Starting and re-starting the hub
 Use `screen` to set up the server as a session that will continue running when closing terminal.
 
+Note that `jupyterhub` must be run in the same directory where `jupyterhub_config.py` is.
+
 ```
 screen -S jupyterhub 
-jupyterhub --config /etc/jupyterhub_config.py
+cd /etc/jupyterhub 
+jupyterhub
 ```
-Note that `jupyterhub` must be run in the same directory where `jupyterhub_config.py` is.
 
 Exit the `screen` session by ctrl+A+D.
 
