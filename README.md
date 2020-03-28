@@ -56,9 +56,11 @@ Choose: `1: Spin up a temporary webserver (standalone)`, then go through the gen
 
 We now have certificates in the `/etc/letsencrypt/live/<your.address>` folder: `fullchain.pem` is the certificate, and `privkey.pem` is the key file.
 
-Now generate a config file for Jupyterhub. I cd’d back up to root (`cd /`), and created it there:
+Now generate a config file for Jupyterhub in the standard UNIX filesystem location:
 
 ```
+mkdir /etc/jupyterhub
+cd /etc/jupyterhub
 jupyterhub --generate-config 
 ```
 Edit the config file:
