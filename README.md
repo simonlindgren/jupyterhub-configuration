@@ -32,16 +32,15 @@ Activate anaconda: `source /opt/anaconda3/bin/activate`
 ```
 apt update
 apt install python3-pip
+conda install nodejs -c conda-forge
 conda install jupyterhub
+conda install jupyterlab
+jupyter labextension install @jupyterlab/hub-extension
 ```
 All users of the hub must have access to `jupyterhub`, so also do: `pip3 install jupyterhub`
 
 Check that it is now also installed in `/usr/local/bin`, using: `which -a jupyterhub`
 
-Install `nodejs`:
-```
-conda install nodejs -c conda-forge
-```
 
 ### 4. Configure JupyterHub
 Your domain name (<your.address>, e.g. http://myhubserver.com) must be set up with your hosting provider to point to the static ip address of the server.
