@@ -20,8 +20,6 @@ Install: `bash Anaconda3-2020.02-Linux-x86_64.sh`
 
 Choose to install under `opt`: `[/root/anaconda3] >>> /opt/anaconda3`
 
-Say `yes` to conda initialisation.
-
 When asked, say `yes` to `conda init`.
 
 Remove the installer: `rm Anaconda3-2020.02-Linux-x86_64.sh`
