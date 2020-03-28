@@ -38,7 +38,7 @@ All users of the hub must have access to `jupyterhub`, so also do: `pip3 install
 
 Check that it is now also installed in `/usr/local/bin`, using: `which -a jupyterhub`
 
-Install `nodejs:
+Install `nodejs`:
 ```
 conda install nodejs -c conda-forge
 ```
