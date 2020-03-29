@@ -42,7 +42,7 @@ conda install jupyterlab
 
 ### 4. Configure JupyterHub
 
-#### `node` setup
+#### 4.1 `node` setup
 To be able to run jupyterlab extensions, it it crucial to have a recent version of `node` installed under anaconda.
 
 ```
@@ -61,7 +61,7 @@ which node
 node -v
 ```
 
-#### lab extensions
+#### 4.2 lab extensions
 
 Enable JupyterLab for JupyterHub (optional).
 
@@ -72,7 +72,7 @@ jupyter labextension install @jupyterlab/hub-extension
 <plotly stuff goes here>
 
 
-#### ssl setup
+#### 4.3 ssl setup
 
 Your domain name (<your.address>, e.g. http://myhubserver.com) must be set up with your hosting provider to point to the static ip address of the server.
 
@@ -86,7 +86,7 @@ Choose: `1: Spin up a temporary webserver (standalone)`, then go through the gen
 
 We now have certificates in the `/etc/letsencrypt/live/<your.address>` folder: `fullchain.pem` is the certificate, and `privkey.pem` is the key file.
 
-#### jupyterhub config
+#### 4.4 jupyterhub config
 Now generate a config file for Jupyterhub in the standard UNIX filesystem location:
 
 ```
@@ -168,7 +168,9 @@ ps aux | grep configurable
 kill <process id, one or several>
 ```
 
-### Some notes
+This is now a working JupyterHub.
+
+Below are some additional notes on configurations that can be made.
 
 ----
 
@@ -187,7 +189,6 @@ chown -R <user> /home/<user>/notebooks
 #### Installing packages
 
 ```
-$ ssh root@xxx.xx.xxx.xx 
 conda install <package name>
 ```
 
@@ -216,8 +217,6 @@ Then relaunch jupyterhub.
 Update jupyter notebook, lab, hub and other packages through:
 
 ```
-$ ssh root@xxx.xx.xxx.xx 
-
 conda update --all 
 # or conda update —packagename
 # conda update jupyter
@@ -300,3 +299,17 @@ In the box "User Preferences", add (as an example):
 ```
 
 Click save button. This sets shift + accelerator key (i.e. command) + T to as a shortcut to launch Terminal.
+
+----
+
+#### Make plotly graphs work in the notebooks
+
+Install lab extensions for plotly. Note that the `lab build` might take quite a few minutes.
+
+```
+pip3 install ipywidgets
+jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build
+jupyter labextension install plotlywidget --no-build
+jupyter labextension install jupyterlab-plotly --no-build
+jupyter lab build
+```
