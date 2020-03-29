@@ -1,11 +1,11 @@
 # JupyterHub on Linode
 
 ### 1. Prepare the machine
-Create an account at [linode.com](http://linode.com) and create a linode with the specs you want (and [can afford](https://www.linode.com/pricing/)). For this tutorial I used Ubuntu 18.04 LTS.
+Have `ssh` access to a machine with a clean Linux OS install.  
 
-In the dashboard for your linode, under 'Networking', you will be see its ip address.
+For this tutorial I used Ubuntu 18.04 LTS.
 
-Connect to the linode:
+Connect to the server:
 
 ```
 $ ssh root@xxx.xx.xxx.xx 
