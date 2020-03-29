@@ -1,4 +1,4 @@
-# JupyterHub on bare metal server
+# From bare metal to JupyterHub
 
 ### 1. Prepare the machine
 Have `ssh` access to a machine with a clean Linux OS install.  
