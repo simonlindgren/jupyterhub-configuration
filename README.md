@@ -13,6 +13,8 @@ $ ssh root@xxx.xx.xxx.xx
 
 ### 2. Set up Anaconda Python
 
+Download and install Anaconda (most recent). Then remove the installer, and activate anaconda.
+
 ```
 wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
