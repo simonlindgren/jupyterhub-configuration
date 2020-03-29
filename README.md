@@ -34,21 +34,46 @@ apt update
 apt install python3-pip
 ```
 
-### 3. Install JupyterHub
+### 3. Install Jupyter
 ```
 conda install jupyterhub
 conda install jupyterlab
 ```
+
+### 4. Configure JupyterHub
+
+#### `node` setup
 To be able to run jupyterlab extensions, it it crucial to have a recent version of `node` installed under anaconda.
 
-/opt/anaconda3/bin/conda install --channel conda-forge nodejs=13
+```
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+apt install -y nodejs
+```
+Check where your `node`'s are and symlink to the right one.
 
-conda install nodejs -c conda-forge
+```
+which -a node # will find one under anaconda and one in usr/bin/node
+rm /opt/anaconda3/bin/node # delete the anaconda node
+ln -s /usr/bin/node /opt/anaconda3/bin/node # symlink the newer one
 
+# test:
+which node
+node -v
+```
+
+#### lab extensions
+
+Enable JupyterLab for JupyterHub (optional).
+
+```
 jupyter labextension install @jupyterlab/hub-extension
 ```
 
-### 4. Configure JupyterHub
+<plotly stuff goes here>
+
+
+#### ssl setup
+
 Your domain name (<your.address>, e.g. http://myhubserver.com) must be set up with your hosting provider to point to the static ip address of the server.
 
 We must set up SSL on the server to be able to use https:
@@ -61,6 +86,7 @@ Choose: `1: Spin up a temporary webserver (standalone)`, then go through the gen
 
 We now have certificates in the `/etc/letsencrypt/live/<your.address>` folder: `fullchain.pem` is the certificate, and `privkey.pem` is the key file.
 
+#### jupyterhub config
 Now generate a config file for Jupyterhub in the standard UNIX filesystem location:
 
 ```
