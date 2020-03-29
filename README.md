@@ -27,6 +27,8 @@ rm Anaconda3-2020.02-Linux-x86_64.sh
 source /opt/anaconda3/bin/activate
 ```
 
+Install `pip` for python.
+
 ```
 apt update
 apt install python3-pip
@@ -34,9 +36,15 @@ apt install python3-pip
 
 ### 3. Install JupyterHub
 ```
-conda install nodejs -c conda-forge
 conda install jupyterhub
 conda install jupyterlab
+```
+To be able to run jupyterlab extensions, it it crucial to have a recent version of `node` installed under anaconda.
+
+/opt/anaconda3/bin/conda install --channel conda-forge nodejs=13
+
+conda install nodejs -c conda-forge
+
 jupyter labextension install @jupyterlab/hub-extension
 ```
 
