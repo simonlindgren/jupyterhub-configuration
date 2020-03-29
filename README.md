@@ -178,10 +178,11 @@ Below are some additional notes on configurations that can be made.
 
 #### Adding users
 
-To set up new users, first create them as users of the Linux server (no need to set a password here). 
+To set up new users, first create them as users of the Linux server. 
 
 ```
 useradd -m <user>
+passwd <user>
 mkdir /home/<user>/notebooks
 chown -R <user> /home/<user>/notebooks
 ```
