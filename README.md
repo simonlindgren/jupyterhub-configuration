@@ -51,12 +51,12 @@ apt install -y nodejs
 ```
 Check where your `node`'s are and symlink to the right one.
 
-```
-which -a node # will find one under anaconda and one in usr/bin/node
-rm /opt/anaconda3/bin/node # delete the anaconda node
-ln -s /usr/bin/node /opt/anaconda3/bin/node # symlink the newer one
+`which -a node` will find one under anaconda and one in usr/bin/node
+`rm /opt/anaconda3/bin/node` delete the anaconda node
+`ln -s /usr/bin/node /opt/anaconda3/bin/node` make a symlink to the newer one
 
-# test:
+Test:
+```
 which node
 node -v
 ```
