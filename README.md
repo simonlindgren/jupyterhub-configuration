@@ -3,7 +3,7 @@
 ### 1. Prepare the machine
 Have `ssh` access to a machine with a clean Linux OS install.  
 
-For this tutorial I used Ubuntu 18.04 LTS.
+For this tutorial I used Ubuntu 20.04 LTS.
 
 Connect to the server:
 
