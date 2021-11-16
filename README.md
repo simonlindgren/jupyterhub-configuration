@@ -16,13 +16,13 @@ $ ssh root@xxx.xx.xxx.xx
 Download and install Anaconda (most recent). Then remove the installer, and activate anaconda.
 
 ```
-wget https://repo.continuum.io/archive/Anaconda3-2020.02-Linux-x86_64.sh
-bash Anaconda3-2020.02-Linux-x86_64.sh
+wget https://repo.continuum.io/archive/Anaconda3-2021.05-Linux-x86_64.sh
+bash Anaconda3-2021.05-Linux-x86_64.sh
 
 # Choose to install under opt: [/root/anaconda3] >>> /opt/anaconda3
 # When asked, say 'yes' to 'conda init'
 
-rm Anaconda3-2020.02-Linux-x86_64.sh
+rm Anaconda3-2021.05-Linux-x86_64.sh
 
 source /opt/anaconda3/bin/activate
 ```
