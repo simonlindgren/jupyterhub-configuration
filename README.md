@@ -40,6 +40,7 @@ sudo apt install python3-pip
 sudo chown -R your-username:your-username /opt/anaconda3
 conda install jupyterhub
 conda install jupyterlab
+sudo pip install importlib-resources
 ```
 
 ### 4. Configure JupyterHub
