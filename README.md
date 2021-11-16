@@ -31,6 +31,7 @@ Install `pip` for python.
 
 ```
 sudo apt update
+sudo apt upgrade
 apt install python3-pip
 ```
 
