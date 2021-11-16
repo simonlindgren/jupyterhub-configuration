@@ -30,7 +30,7 @@ source /opt/anaconda3/bin/activate
 Install `pip` for python.
 
 ```
-apt update
+sudo apt update
 apt install python3-pip
 ```
 
