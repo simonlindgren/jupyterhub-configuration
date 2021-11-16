@@ -37,6 +37,7 @@ sudo apt install python3-pip
 
 ### 3. Install Jupyter
 ```
+sudo chown -R your-username:your-username /opt/anaconda3
 conda install jupyterhub
 conda install jupyterlab
 ```
