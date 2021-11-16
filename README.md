@@ -49,8 +49,8 @@ sudo pip install importlib-resources
 To be able to run jupyterlab extensions, it it crucial to have a recent version of `node` installed under anaconda.
 
 ```
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-apt install -y nodejs
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install -y nodejs
 ```
 Check where your `node`'s are and symlink to the right one.
 
@@ -74,9 +74,6 @@ Enable JupyterLab for JupyterHub (optional).
 jupyter labextension install @jupyterlab/hub-extension
 ```
 
-<plotly stuff goes here>
-
-
 #### 4.3 ssl setup
 
 Your domain name (<your.address>, e.g. http://myhubserver.com) must be set up with your hosting provider to point to the static ip address of the server.
@@ -84,8 +81,8 @@ Your domain name (<your.address>, e.g. http://myhubserver.com) must be set up wi
 We must set up SSL on the server to be able to use https:
 
 ```
-apt install letsencrypt
-certbot certonly
+sudo apt install letsencrypt
+sudo certbot certonly
 ```
 Choose: `1: Spin up a temporary webserver (standalone)`, then go through the generation process.
 
@@ -95,7 +92,8 @@ We now have certificates in the `/etc/letsencrypt/live/<your.address>` folder: `
 Now generate a config file for Jupyterhub in the standard UNIX filesystem location:
 
 ```
-mkdir /etc/jupyterhub
+sudo chown -R your-username:your-username /etc
+sudo mkdir /etc/jupyterhub
 cd /etc/jupyterhub
 jupyterhub --generate-config 
 ```
