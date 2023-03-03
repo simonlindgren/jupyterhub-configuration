@@ -3,7 +3,7 @@
 ### 1. Prepare the machine
 Have `ssh` access to a machine with a clean Linux OS install.  
 
-For this tutorial I used Ubuntu 20.04 LTS.
+For this tutorial I used Ubuntu 22.04.2 LTS.
 
 Connect to the server:
 
@@ -16,13 +16,13 @@ $ ssh root@xxx.xx.xxx.xx
 Download and install Anaconda (most recent). Then remove the installer, and activate anaconda.
 
 ```
-wget https://repo.continuum.io/archive/Anaconda3-2021.05-Linux-x86_64.sh
-sudo bash Anaconda3-2021.05-Linux-x86_64.sh
+wget https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh
+sudo bash Anaconda3-2022.10-Linux-x86_64.sh
 
 # Choose to install under opt: [/root/anaconda3] >>> /opt/anaconda3
 # When asked, say 'yes' to 'conda init'
 
-rm Anaconda3-2021.05-Linux-x86_64.sh
+rm Anaconda3-2022.10-Linux-x86_64.sh
 
 source /opt/anaconda3/bin/activate
 ```
