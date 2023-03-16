@@ -189,6 +189,11 @@ chown -R <user> /home/<user>/notebooks
 
 ----
 
+#### Install some themes
+
+`pip install jupyterlab_darkside_ui jupyterlab_legos_ui jupyterlab-simpledark jupyterlab_materialdarker theme-darcula jupyterlab-horizon-theme`
+
+----
 #### Installing packages
 
 ```
