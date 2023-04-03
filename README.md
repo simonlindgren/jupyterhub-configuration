@@ -288,6 +288,8 @@ Wait for it to install. Refresh the browser. Try to create a new notebook, and J
 
 In the jupyter interface (in your browser) make menu selections: Settings -> Advanced Settings Editor -> Keyboard Shortcuts
 
+Note that the following applies to the 'JSON Settings Editor' view.
+
 In the box "User Preferences", add (as an example):
 
 ```
